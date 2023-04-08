@@ -1,5 +1,9 @@
 "use strict";
 
+const container = document.querySelector(".container");
+const text = document.querySelector(".text");
+const btn = document.querySelector(".btn");
+
 const User = {
   fullname: "Nick",
   age: 321,
@@ -12,10 +16,12 @@ const User = {
 };
 
 const SecondUser = { ...User };
-SecondUser.occupation = { text: "PoGrammer ^_^" };
+SecondUser.occupation = { text: "PogChamp  ^_^" };
 
 console.log(SecondUser.occupation);
 
-document.querySelector(".text").innerHTML = JSON.stringify(
-  SecondUser.occupation
-);
+text.innerHTML = JSON.stringify(SecondUser.occupation);
+
+btn.addEventListener("click", function () {
+  text.innerHTML = SecondUser.occupation.text;
+});
