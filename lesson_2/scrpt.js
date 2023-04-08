@@ -81,18 +81,18 @@ filmList.forEach((element) => {
   text: ${text}`);
 });
 
-function sortFilmsByYear(filmList, year) {
+const sortFilmsByYear = (filmList, year) => {
   const sortedFilmByYear = filmList.find(
     (film) => Number(film.year) === Number(year)
   );
   return sortedFilmByYear;
-}
-function sortFilmsByTitle(filmList, title) {
+};
+const sortFilmsByTitle = (filmList, title) => {
   const sortedFilmByTitle = filmList.find(
     (film) => String(film.title) === String(title)
   );
   return sortedFilmByTitle;
-}
+};
 
 console.log(sortFilmsByYear(filmList, 3333));
 console.log(sortFilmsByTitle(filmList, "Film-4"));
