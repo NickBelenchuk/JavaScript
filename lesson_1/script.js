@@ -5,10 +5,10 @@ const text = document.querySelector(".text");
 const btn = document.querySelector(".btn");
 
 const User = {
-  fullname: "Nick",
+  fullName: "Nick",
   age: 321,
-  any_info_about_ur_place: { country: "Ukraine" },
-  hascats: false,
+  info: { country: "Ukraine" },
+  hasCats: false,
   hobbies: ["one", "two", "three"],
   greeting: function () {
     return `Hey, my name is ${this.fullname}`;
