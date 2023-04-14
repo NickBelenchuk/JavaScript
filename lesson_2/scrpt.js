@@ -67,24 +67,16 @@ let totalScore = 0;
 filmList.forEach((film) => {
   const reviews = film.details.reviews;
   reviewsCount += reviews.length;
+
   reviews.forEach((review) => {
     totalScore += review.score;
   });
-});
-
-const avgScore = (totalScore / reviewsCount).toFixed(2);
-
-console.log(`Total reviews count: ${reviewsCount}`);
-console.log(`Average score: ${avgScore}`);
-
-const text = `The 1997 film “Escape from Shawshank”, which tells the story of “Over the course of several years, 
-  two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.
-  ”This movie starred DiCaprio, van Damme and etc. It was rated by ${reviewsCount} users, with a total rating of ${avgScore} / ${maxScore}. Register to watch this drama.`;
-
-// What's the point of outputting the same text multiple times? О_о
-filmList.forEach((element) => {
-  console.log(` Id: ${element.id}
-  text: ${text}
+  const avgScore = (totalScore / reviewsCount).toFixed(2);
+  console.log(` Id: ${film.id}
+  text: 
+  The 1997 film “Escape from Shawshank”, which tells the story of “Over the course of several years, 
+two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.
+”This movie starred DiCaprio, van Damme and etc. It was rated by ${reviewsCount} users, with a total rating of ${avgScore} / ${maxScore}. Register to watch this drama.
   `);
 });
 
