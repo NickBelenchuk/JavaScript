@@ -72,8 +72,8 @@ filmList.forEach((film) => {
     totalScore += review.score;
   });
   const avgScore = (totalScore / reviewsCount).toFixed(2);
-  console.log(` Id: ${film.id}
-  text: 
+  console.log(`ID: ${film.id}
+TEXT: 
   The 1997 film “Escape from Shawshank”, which tells the story of “Over the course of several years, 
 two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.
 ”This movie starred DiCaprio, van Damme and etc. It was rated by ${reviewsCount} users, with a total rating of ${avgScore} / ${maxScore}. Register to watch this drama.
