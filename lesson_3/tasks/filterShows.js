@@ -16,14 +16,12 @@ export const filterShows = (shows, filterCriteria) => {
     const yearValue = !year || show.year >= year;
     const titleValue =
       !title || show.title.toLowerCase().includes(title.toLowerCase());
-    return yearValue && titleValue;
+    const ratingValue = !rating || show.rating >= rating;
+
+    return yearValue && titleValue && ratingValue;
   });
 
-  if (!rating) {
-    return filteredShows;
-  } else {
-    return filteredShows.sort((a, b) => b.rating - a.rating);
-  }
+  return filteredShows;
 };
 
 export const shows = [
@@ -34,4 +32,4 @@ export const shows = [
   { title: "Lord of the rings", year: 2121, rating: 9 },
 ];
 
-export const filterCriteria = { year: 2016, title: "the" };
+export const filterCriteria = { year: 2016, title: "the", rating: 7 };
