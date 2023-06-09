@@ -1,4 +1,4 @@
-const DataMovies = [
+export const DataMovies = [
   {
     id: 1,
     title: "Guardians of the Galaxy Vol. 3",
@@ -78,34 +78,3 @@ const DataMovies = [
     rating: 3.3,
   },
 ];
-
-// Task 1
-
-const year = new Date().getFullYear();
-
-const movies = DataMovies.map((movie) => {
-  const newActors = movie.actors.map((actor) => {
-    const newActor = { ...actor };
-    newActor.age = year - actor.birthyear;
-    return newActor;
-  });
-  return { ...movie, actors: newActors };
-});
-
-console.log(movies);
-
-/// Task 2
-
-const myGenres = {};
-
-for (const movie of DataMovies) {
-  for (const genre of movie.genre) {
-    if (!myGenres[genre]) {
-      myGenres[genre] = { name: genre, movies: [] };
-    }
-    myGenres[genre].movies.push(movie.title);
-  }
-}
-
-const genreMoviesArray = Object.values(myGenres);
-console.log(genreMoviesArray);
